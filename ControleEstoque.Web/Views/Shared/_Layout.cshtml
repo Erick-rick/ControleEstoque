@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ControleEstoque.Web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ControleEstoque</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item  dropdown">
+                            <a href="#" class="nav-link text-dark dropdown-toggle" data-toggle="dropdown">
+                                Cadastros
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item">@Html.ActionLink("Grupos de produtos", "GrupoProduto", "Cadastro")</li>
+                                <li class="dropdown-item">@Html.ActionLink("Marcas de produtos", "MarcaProduto", "Cadastro")</li>
+                                <li class="dropdown-item">@Html.ActionLink("Locais de armazenamento", "LocalProduto", "Cadastro")</li>
+                                <li class="dropdown-item">@Html.ActionLink("Unidades de medida", "UnidadeMedida", "Cadastro")</li>
+                                <li class="dropdown-item">@Html.ActionLink("Produtos", "Produto", "Cadastro")</li>
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-item">@Html.ActionLink("Países", "Pais", "Cadastro")</li>
+                                <li class="dropdown-item">@Html.ActionLink("Estados", "Estado", "Cadastro")</li>
+                                <li class="dropdown-item">@Html.ActionLink("Cidades", "Cidades", "Cadastro")</li>
+                                <li class="dropdown-item">@Html.ActionLink("Fornecedor", "Fornecedor", "Cadastro")</li>
+                                <li class="dropdown-divider"></li>
+                                <li class="dropdown-item">@Html.ActionLink("Perfis de Usuários", "PerfilUsuario", "Cadastro")</li>
+                                <li class="dropdown-item">@Html.ActionLink("Usuario", "Usuario", "Cadastro")</li>
+                            </ul>                          
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link text-dark dropdown-toggle" data-toggle="dropdown">
+                                Operações
+                                <span class="caret"></span>
+                            </a>
+                            <ul class= "dropdown-menu dropdown-menu-dark">
+                            
+                                <li class="dropdown-item">@Html.ActionLink("Entrada de Produtos", "EntradaEstoque", "Operacao") </li>
+                                <li class="dropdown-item">@Html.ActionLink("Saída de Produtos", "SaidaEstoque", "Operacao") </li>
+                                <li class="dropdown-item">@Html.ActionLink("Lançamento de Perdas de Produtos", "LancamentoPerdaProduto", "Operacao") </li>
+                                <li class="dropdown-item">@Html.ActionLink("Inventário de Estoque", "Inventario", "Operacao") </liclass="dropdown-item">
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link text-dark dropdown-toggle" data-toggle="dropdown">
+                                Relatórios
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item">@Html.ActionLink("Posição do Estoque", "PosicaoEstoque", "Relatorio") </li>
+                                <li class="dropdown-item">@Html.ActionLink("Ressuprimento", "Ressuprimento", "Relatorio") </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class=" nav-link text-dark dropdown-toggle" data-toggle="dropdown">
+                                Graficos
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item">@Html.ActionLink("Perdas por mês", "PerdaMes", "Grafico") </li>
+                                <li class="dropdown-item">@Html.ActionLink("Entrada vs Saida por Mês", "EntradaSaidaMes", "Grafico")</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - ControleEstoque.Web - 
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy </a>
+            <a asp-area="" asp-controller="Home" asp-action="Sobre"> Sobre</a>
+        </div>
+
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
