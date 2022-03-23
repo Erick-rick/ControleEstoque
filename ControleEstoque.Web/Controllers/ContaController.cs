@@ -7,16 +7,12 @@ using System.Threading.Tasks;
 
 namespace ControleEstoque.Web.Controllers
 {
-    public class GraficoController : Controller
+    public class ContaController : Controller
     {
-        [Authorize]
-        public IActionResult PerdaMes()
+        [AllowAnonymous]
+        public IActionResult Login(string returnUrl)
         {
-            return View();
-        }
-        [Authorize]
-        public IActionResult EntradaSaidaMes()
-        {
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
     }

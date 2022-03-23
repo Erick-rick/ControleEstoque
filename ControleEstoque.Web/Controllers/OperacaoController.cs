@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,22 +9,22 @@ namespace ControleEstoque.Web.Controllers
 {
     public class OperacaoController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        [Authorize]
         public IActionResult EntradaEstoque()
         {
             return View();
         }
+        [Authorize]
         public IActionResult SaidaEstoque()
         {
             return View();
         }
+        [Authorize]
         public IActionResult LancamentoPerdaProduto()
         {
             return View();
         }
+        [Authorize]
         public IActionResult Inventario()
         {
             return View();
